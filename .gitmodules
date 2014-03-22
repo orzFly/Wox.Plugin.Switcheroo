@@ -1,0 +1,3 @@
+[submodule "Switcheroo"]
+	path = Switcheroo
+	url = https://github.com/kvakulo/Switcheroo.git
