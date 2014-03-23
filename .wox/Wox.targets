@@ -24,7 +24,7 @@
 
     <Target Name="CreateWoxPlugin">
         <ItemGroup>
-            <WoxPluginFiles Include="$(OutputPath)\**\*.*" Exclude="$(OutputPath)\*vshost.exe*" />
+            <WoxPluginFiles Include="$(OutputPath)\**\*.*" Exclude="$(OutputPath)\*vshost.exe*;$(OutputPath)\*.wox" />
         </ItemGroup>
         <Zip TaskAction="Create" CompressFiles="@(WoxPluginFiles)"
             RemoveRoot="$(OutputPath)"
