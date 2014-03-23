@@ -1,6 +1,6 @@
 [Wox](http://getwox.com) Plugin: Switcheroo
 ===========================================
-![image](https://f.cloud.github.com/assets/158528/2491834/eefa9062-b1ff-11e3-95ec-0e4e06ef9776.png)
+![image](https://f.cloud.github.com/assets/158528/2492900/d1b8fd8a-b264-11e3-9e4f-be336432525f.png)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/8n8q2rm7b8e1m269)](https://ci.appveyor.com/project/orzFly/wox-plugin-switcheroo)
 
