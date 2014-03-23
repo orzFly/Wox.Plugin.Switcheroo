@@ -25,14 +25,20 @@ namespace Wox.Plugin.Switcheroo
             if (iconImageDataUri == null)
             {
                 var iconImage = self.IconImage;
-                using (MemoryStream memoryStream = new MemoryStream())
+                try
                 {
-                    BitmapEncoder encoder = new PngBitmapEncoder();
-                    encoder.Frames.Add(BitmapFrame.Create(iconImage));
-                    encoder.Save(memoryStream);
-                    var b64String = Convert.ToBase64String(memoryStream.ToArray());
-                    iconImageDataUri = "data:image/png;base64," + b64String;
-                    System.Runtime.Caching.MemoryCache.Default.Add(key, iconImageDataUri, DateTimeOffset.Now.AddHours(1));
+                    using (MemoryStream memoryStream = new MemoryStream())
+                    {
+                        BitmapEncoder encoder = new PngBitmapEncoder();
+                        encoder.Frames.Add(BitmapFrame.Create(iconImage));
+                        encoder.Save(memoryStream);
+                        var b64String = Convert.ToBase64String(memoryStream.ToArray());
+                        iconImageDataUri = "data:image/png;base64," + b64String;
+                        System.Runtime.Caching.MemoryCache.Default.Add(key, iconImageDataUri, DateTimeOffset.Now.AddHours(1));
+                    } 
+                }
+                catch {
+                    return null;
                 }
             }
             return iconImageDataUri;
